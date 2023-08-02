@@ -1,0 +1,27 @@
+.navbar {
+    background: linear-gradient(to right, #fff, lightgray);
+    padding:10px;
+    color: #fff;
+}
+
+
+.nav-item {
+            display: inline-block;
+            padding: 8px 15px;
+            color: #fff;
+}
+
+
+.nav-item:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+}
+/* 푸터의 배경색을 #666으로 설정 */
+.footer {
+    background-color: #3079AE;
+    color: #000; /* 글자 색상을 흰색으로 설정 (선택사항) */
+}
+
+body {
+    background-color: #ffffff;
+}
+
