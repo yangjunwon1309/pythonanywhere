@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>COJI</title>
+
+    <link rel="icon" href="/static/fabicon.png" type="image/x-icon">
+        <!-- Bootstrap CSS를 사용하기 위한 CDN 링크 -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/index.css">
+    <style>
+        .navbar {
+    background: linear-gradient(to right, #fff, lightgray);
+    padding:10px;
+    color: #fff;
+}
+
+
+.nav-item {
+            display: inline-block;
+            padding: 8px 15px;
+            color: #fff;
+}
+
+
+.nav-item:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+}
+.navbar-left, .navbar-right {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-right {
+    margin-left: auto;
+}
+.btn {
+  background: none; /* 배경색을 흰색(#ffffff)으로 설정합니다. */
+  color: white; /* 텍스트 색상을 녹색(#008000)으로 설정합니다. */
+  font-weight: bold; /* 텍스트 굵기를 bold로 설정합니다. */
+  font-size: 20px; /* 텍스트 크기를 20px로 설정합니다. */
+  border: 0px;
+  border-radius: 5px; /* 테두리의 모서리를 둥글게 만듭니다. */
+  padding: 2px 15px; /* 버튼의 내부 여백을 설정합니다. */
+
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s; /* 마우스 오버 시 부드러운 효과를 추가합니다. */
+}
+
+.btn:hover {
+    background-color: #3079AE;
+
+}
+
+</style>
+    <script>
+      function filterImages(category) {
+        const imageElements = document.getElementsByClassName('image-item');
+
+        // 각 이미지 게시물 요소를 반복하며 필터링 적용
+        for (const element of imageElements) {
+            // data-category 속성에 저장된 카테고리 값을 가져옴
+            const itemCategory = element.getAttribute('data-category');
+
+            // 선택한 카테고리가 '전체'이거나 선택한 카테고리와 이미지 게시물의 카테고리가 일치하면 보여줌
+            if (category === 'all' || category === itemCategory) {
+                element.style.display = 'block'; // 보이기
+            } else {
+                element.style.display = 'none';  // 숨기기
+            }
+        }
+    }
+    </script>
+</head>
+
+<body style = "background-color:lightgray;">
+    <!-- 상단 메뉴바 -->
+    <nav class="navbar navbar-expand-lg navbar-light" style="background: linear-gradient(to right, #fff, lightgray);">
+        <div class="container">
+            <!-- 로고 이미지 칸 -->
+            <a class="navbar-brand" href="/coji">
+                <img src="/static/logo_w.svg" alt="로고 이미지" height="30" >
+            </a>
+
+            <!-- 메뉴 버튼들 -->
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/support" style="color:#3079AE">프로젝트 소개</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/social_venture" style="color:#3079AE">소셜 벤처</a>
+                <li class="nav-item">
+                    <a class="nav-link" href="/team" style="color:#3079AE">팀 소개</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <nav class="navbar" style="background: linear-gradient(to bottom, #3079AE, lightblue); ">
+        <ul class="navbar-right">
+                <li class="nav-item">
+            <button class="btn " onclick="filterImages('all')">전체</button>
+                </li>
+                <li class="nav-item">
+            <button class="btn " onclick="filterImages('enviro')">환경</button>
+                <li class="nav-item">
+            <button class="btn " onclick="filterImages('social')" style="margin-right : 100px;">사회</button>
+                </li>
+            </ul>
+
+    </nav><br>
+
+
+    <header>
+        <div class="container">
+            <img src="/static/banner.png" alt="배너 이미지" height="100" style="width: 100%; object-fit: cover; padding:0px;">
+        </div>
+    </header><br>
+
+<div class="container text-left image-item" data-category="all" style="background-color:lightyellow; color:#3079AE; margin-bottom: 10px;">
+            <br><br>
+            <h2 style="text-align: left; color:#3079AE;"> | 기술로써 사회 혁신을 불러일으키는 소셜 벤처
+            </h2><br>
+            <h4> 소셜 벤처들의 가치와 임팩트를 누구나 알 수 있도록 알립니다. </h4> <br><br>
+
+
+        <p> 기술 기반 소셜 벤처들의 사례를 정리했습니다. 그들이 사용한 기술과 정의한 문제들, 창출하고 있는 임팩트를 보기 쉽게 정리했습니다. </p><br>
+        <a href = "https://instagram.com/lookie_kaist_cnu">링크 : 인스타그램 </a><br><br>
+
+        <div class="row">
+            <!-- 이미지 1 -->
+            <div class="col-md-4">
+                <img src="{{ url_for('static', filename='image1.jpg') }}" alt="Image 1" class="img-fluid">
+                <p>이미지 설명 1</p>
+            </div>
+            <!-- 이미지 2 -->
+            <div class="col-md-4">
+                <img src="{{ url_for('static', filename='image2.jpg') }}" alt="Image 2" class="img-fluid">
+                <p>이미지 설명 2</p>
+            </div>
+            <!-- 이미지 3 -->
+            <div class="col-md-4">
+                <img src="{{ url_for('static', filename='image3.jpg') }}" alt="Image 3" class="img-fluid">
+                <p>이미지 설명 3</p>
+            </div>
+            <!-- 추가적인 이미지 컬럼을 이곳에 추가할 수 있습니다. -->
+        </div>
+
+
+    </div>
+
+    <div class="sv lists" style="background-color:lightgray;   ">
+    {% for item in sv_urls %}
+    <div class="container text-left image-item" data-category="{{ item.category }}" style="background-color:white; color:gray; margin-bottom:10px;">
+            <br><br>
+
+            <h2 style="text-align: left; color:#3079AE;"> | {{ item.name }}
+            </h2><br>
+            <h4>{{ item.corevalue }}</h4> <br><br>
+
+            <div class="row my-3 "  style = "background-color:white;">
+                <div class="col-md-6">
+                    <img src="{{ item.image_url }}" alt="Image" style="width: 100%; max-height: 300px; object-fit: cover; ">
+                </div>
+                <!-- 오른쪽에 텍스트 -->
+                <div class="col-md-6">
+                    <p>
+                        {{ item.image_text }}
+
+                    </p>
+                </div>
+            </div>
+
+        <p>{{ item.text }}</p><br>
+        <a href = "{{ item.link }}">링크 : 사이트 링크 </a><br><br>
+
+
+    </div>
+    {% endfor %}
+        </div>
+
+
+
+    <footer class="footer bg-lightgray mt-3" style="background-color:lightgray;">
+        <div class="container text-center" style="color:gray;">
+            <p>&copy; 2023 COJI for social impact. All rights reserved.<br>
+                contact to instagram : @lookie_kaist_cnu <br>
+
+            </p>
+
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS와 jQuery를 사용하기 위한 CDN 링크 -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

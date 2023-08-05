@@ -21,7 +21,22 @@
             padding: 8px 15px;
             color: #fff;
 }
+.btn {
+  background: none; /* 배경색을 흰색(#ffffff)으로 설정합니다. */
+  color: white; /* 텍스트 색상을 녹색(#008000)으로 설정합니다. */
+  font-weight: light; /* 텍스트 굵기를 bold로 설정합니다. */
+  font-size: 15px; /* 텍스트 크기를 20px로 설정합니다. */
+  border: 0px;
+  border-radius: 5px; /* 테두리의 모서리를 둥글게 만듭니다. */
+  padding: 2px 15px; /* 버튼의 내부 여백을 설정합니다. */
 
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s; /* 마우스 오버 시 부드러운 효과를 추가합니다. */
+}
+
+.btn:hover {
+    background-color: #3079AE;
+
+}
 
 .nav-item:hover {
             background-color: rgba(255, 255, 255, 0.2);
@@ -40,6 +55,11 @@
 
             <!-- 메뉴 버튼들 -->
             <ul class="navbar-nav ml-auto">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/index" style="color:#3079AE"> 행사 신청 </a>
+                </li>
+
                 <li class="nav-item">
                     <a class="nav-link" href="/support" style="color:#3079AE">프로젝트 소개</a>
                 </li>
@@ -55,20 +75,22 @@
 
     <header>
         <div class="container">
-            <img src="/static/image 33.png" alt="배너 이미지" height="100" style="width: 100%; object-fit: cover; padding:0px;">
+            <img src="/static/banner.png" alt="배너 이미지" height="100" style="width: 100%; object-fit: cover; padding:0px;">
         </div>
     </header>
 
 
 
     <!-- 이미지 게시판 부분 -->
-    <div class="container mt-3">
+    {% for item in image_urls %}
+    <div class="container mt-3 image-item" data-category="{{ item.category }}" style = "background-color:white;">
 
-        {% for item in image_urls %}
-            <div class="row my-3 image-item" data-category="{{ item.category }}" style = "background-color:white;">
+            <div class="row my-3 " >
                 <!-- 왼쪽에 이미지 -->
+
                 <div class="col-md-6">
-                    <img src="{{ item.image_url }}" alt="Image" style="width: 100%; max-height: 300px; object-fit: cover; ">
+                    <img src="{{ item.image_url }}" alt="Image" style="width: 90%; max-height: 1200px; object-fit: cover; ">
+
                 </div>
                 <!-- 오른쪽에 텍스트 -->
                 <div class="col-md-6">
@@ -77,9 +99,8 @@
                     </p>
                 </div>
             </div>
-        {% endfor %}
-
     </div>
+    {% endfor %}
 
     <div class="container mt-3">
 
@@ -89,7 +110,7 @@
                 <select class="form-control" id="filter_category">
                     <option value="">전체</option>
                     <option value="category1">인터뷰 아티클</option>
-                    <option value="category2">임팩트 리포트</option>
+                    <option value="category2">이벤트</option>
                     <option value="category3">유튜브 컨텐츠</option>
                 </select>
             </div>

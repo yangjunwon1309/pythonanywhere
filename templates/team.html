@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>COJI</title>
+
+    <link rel="icon" href="/static/fabicon.png" type="image/x-icon">
+        <!-- Bootstrap CSS를 사용하기 위한 CDN 링크 -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/index.css">
+    <style>
+        .navbar {
+    background: linear-gradient(to right, #fff, lightgray);
+    padding:10px;
+    color: #fff;
+}
+
+
+.nav-item {
+            display: inline-block;
+            padding: 8px 15px;
+            color: #fff;
+}
+
+
+.nav-item:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+}
+    </style>
+</head>
+
+<body style = "background-color:lightgray;">
+    <!-- 상단 메뉴바 -->
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #fff; ">
+        <div class="container">
+            <!-- 로고 이미지 칸 -->
+            <a class="navbar-brand" href="/coji">
+                <img src="/static/logo_w.svg" alt="로고 이미지" height="30" >
+            </a>
+
+            <!-- 메뉴 버튼들 -->
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/support" style="color:#3079AE">프로젝트 소개</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/social_venture" style="color:#3079AE">소셜 벤처</a>
+                <li class="nav-item">
+                    <a class="nav-link" href="/team" style="color:#3079AE">팀 소개</a>
+                </li>
+            </ul>
+        </div>
+    </nav><br>
+
+
+    <header>
+        <div class="container">
+            <img src="/static/banner.png" alt="배너 이미지" height="100" style="width: 100%; object-fit: cover; padding:0px">
+        </div>
+    </header><br>
+
+
+    <div class="container text-left" style="background-color:white; color:gray; ">
+            <br><br>
+            <h2 style="text-align: left; color:#3079AE;"> | About us
+            </h2><br>
+            <h4>"소셜 임팩트를 우리의 능력으로 이끌어낸다"</h4> <br><br>
+            <p>COJI는 국내 최초 청년 대학생 주도 소셜 임팩트 창출 비영리 단체를 목표로 2023년 카이스트 홍릉캠퍼스에서 만들어졌습니다.<br><br>
+                소셜 벤처들과 문제 당사자들이 알게 된 인사이트들을 디지털 공간에 정리해보려는 시도를 하려고 합니다. <br><br>
+                이미 앞선 팀들이 발굴했던 사회문제를 다시 파헤치는 청년 창업 팀들에 주목했습니다.<br><br>
+                정리된 인사이트와 피드백 가능한 당사자 풀을 제공해주어 청년 창업 팀들의 끓는 열정을 확실한 방향성으로 이끌고 싶습니다.<br><br>
+            </p>
+
+    </div>
+
+    <header>
+        <div class="container">
+            <img src="/static/team.png" alt="팀 대표 이미지" height="800" style="width: 100%; object-fit: cover; margin-bottom: 10px;">
+        </div>
+    </header>
+
+
+    <div class="container text-left" style="background-color:white; color:gray; ">
+            <br><br>
+            <h2 style="text-align: left; color:#3079AE;"> | Team info
+            </h2><br>
+            <h4>KAIST LOOKIE</h4> <br><br>
+        <p>- 2019        |  단체 개설 (KAIST LOOKIE, 30명) <br><br>
+           - 2019 ~ 2022 |  총 6개 예비 창업팀 운영, 2개 기관 협력 <br><br>
+           - 2023        |  신규 6개 예비 창업팀 운영 중 (현재 총 8팀), 전체 개편 및 확장<br><br>
+           - 2023.7 ~    |   COJI 시작, 프로토타입 기반 네트워크 확보</p><br>
+
+    </div>
+
+
+    <div class="container text-left" style="background-color:white; color:gray; ">
+            <br><br>
+            <h2 style="text-align: left; color:#3079AE;"> | Archive
+            </h2><br>
+            <h4>"여러분들의 인사이트를 공유해주세요"</h4> <br><br>
+        <p>여러분들의 인사이트를 아래 구글폼 링크를 통해 접수해주세요.</p><br>
+        <a href = "https://forms.gle/hSRQdXwEx28hDiLt9">링크 :  https://forms.gle/hSRQdXwEx28hDiLt9 </a><br><br>
+    </div>
+
+
+
+
+
+
+    <footer class="footer bg-lightgray mt-3" style="background-color:lightgray;">
+        <div class="container text-center" style="color:gray;">
+            <p>&copy; 2023 COJI for social impact. All rights reserved.<br>
+                contact to instagram : @lookie_kaist_cnu <br>
+
+            </p>
+
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS와 jQuery를 사용하기 위한 CDN 링크 -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
